@@ -17,7 +17,7 @@ config.keys.each do |worker|
   code = IronWorkerNG::Code::Base.new
   code.runtime 'ruby'
   code.name "#{worker}::dispatcher"
-  code.exec 'dispatcher.rb'
+  code.exec 'code/dispatcher.rb'
   code.gem 'iron_worker_ng'
   code.gem 'iron_mq'
   code.remote
@@ -34,7 +34,7 @@ enforcer_config = {
 code = IronWorkerNG::Code::Base.new
 code.runtime 'ruby'
 code.name 'enforcer' 
-code.exec 'enforcer.rb'
+code.exec 'code/enforcer.rb'
 code.gem 'iron_worker_ng'
 code.remote
 

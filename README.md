@@ -3,7 +3,7 @@ Assuming you have worker which does some really quick job (like examples/delay.o
 1. Adjust your worker so it'll accept array of base64-encoded payloads, not just one payload. Check how it's done in the examples/delay.rb. Note, it'll continue to work if queued normally and will support array of payloads as well. Re-upload and test it.
 
 2. Edit config.json and adjust parameters there. It should be array of hashes for each worker you want to use that way in the project with key containing worker name and some parameters:
-   - `queue` - queue name which will be used to start workers instead of queueing them.
+   - `queue` - queue name which will be used to start workers instead of queueing them. Optional, equals to worker name by default.
    - `chunk_size` - maximum amount of jobs to be joined to one array.
    - `concurrency` - number of dispatchers to run (start with 1 or 2, increase in case it can't handle load).
 
