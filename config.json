@@ -1,0 +1,7 @@
+{
+  "delay": {
+    "queue": "delay",
+    "chunk_size": 25,
+    "concurrency": 2
+  }
+}
