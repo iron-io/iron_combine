@@ -15,6 +15,7 @@ puts "listening on queue #{config[:queue]}"
 while true
   if Time.now - start >= 55 * 60
     puts 'terminating'
+    break
   end
 
   messages = queue.get(:n => config[:chunk_size])
@@ -34,3 +35,5 @@ while true
     queue.delete_messages(ids)
   end
 end
+
+puts 'finished'
