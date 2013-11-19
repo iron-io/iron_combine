@@ -9,7 +9,7 @@ config.keys.each do |worker|
   dispatcher_config = {
     :project_id => iw.project_id,
     :token => iw.token,
-    :queue => config[worker]['queue'],
+    :queue => config[worker]['queue'] || worker,
     :chunk_size => config[worker]['chunk_size'],
     :process_worker => worker
   }
